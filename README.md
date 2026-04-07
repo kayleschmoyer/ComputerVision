@@ -65,23 +65,54 @@ and a **FastAPI backend + HTML/JS dashboard** for alert monitoring.
 
 ### 1) Create and activate a virtual environment
 
+Start in your **project folder** (not `C:\Windows\System32`).
+
+#### Windows (PowerShell)
+
+```powershell
+cd C:\path\to\ComputerVision
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+If `py` is not available, try:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+If you see `Python was not found`, install Python from [python.org](https://www.python.org/downloads/windows/) and enable **Add python.exe to PATH** during install.
+
+#### Windows (Command Prompt / cmd.exe)
+
+```cmd
+cd C:\path\to\ComputerVision
+py -m venv .venv
+.venv\Scripts\activate.bat
+```
+
+#### macOS / Linux (bash/zsh)
+
 ```bash
+cd /path/to/ComputerVision
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-On Windows PowerShell:
-
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-```
+After activation, your shell prompt usually shows `(.venv)` at the beginning.
 
 ### 2) Install dependencies
 
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+To leave the virtual environment later:
+
+```bash
+deactivate
 ```
 
 ---
@@ -171,4 +202,3 @@ For maintainability, each rule should:
   - integrating real barcode scanner events
   - calibrating zones per camera
   - adding unit/integration tests around rule outcomes
-
