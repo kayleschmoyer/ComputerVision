@@ -1,0 +1,1 @@
+"""ScanGuard Lite package."""
