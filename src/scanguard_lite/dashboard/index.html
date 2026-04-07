@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ScanGuard Lite Dashboard</title>
+    <link rel="stylesheet" href="/dashboard/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ScanGuard Lite Alerts</h1>
+      <p>Real-time suspicious checkout activity feed.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Recent Alerts</h2>
+        <ul id="alertList"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Clip Player</h2>
+        <video id="clipPlayer" controls></video>
+        <p id="clipMeta">Select an alert to play its clip.</p>
+      </section>
+    </main>
+
+    <script src="/dashboard/app.js"></script>
+  </body>
+</html>

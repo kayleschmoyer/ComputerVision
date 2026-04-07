@@ -1,0 +1,42 @@
+camera:
+  id: "checkout-cam-01"
+  source: 0
+  width: 1280
+  height: 720
+  fps: 25
+
+model:
+  yolo_model: "yolov8n.pt"
+  tracker: "bytetrack.yaml"
+  conf_threshold: 0.35
+  iou_threshold: 0.45
+  classes_of_interest: ["person", "bottle", "cup", "book", "banana", "apple", "orange"]
+
+zones:
+  scan_zone:
+    x1: 420
+    y1: 220
+    x2: 900
+    y2: 520
+  bagging_zone:
+    x1: 920
+    y1: 180
+    x2: 1260
+    y2: 680
+
+rules:
+  no_scan_timeout_sec: 2.5
+  hand_cover_overlap_threshold: 0.2
+  swap_distance_threshold_px: 130
+
+events:
+  clip_duration_sec: 5
+  clip_pre_event_ratio: 0.6
+  storage_dir: "clips"
+  send_to_api: true
+  api_post_url: "http://127.0.0.1:8000/alerts"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  sqlite_path: "data/scanguard.db"
